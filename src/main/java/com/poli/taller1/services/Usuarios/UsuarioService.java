@@ -23,6 +23,7 @@ public class UsuarioService implements IUsuarioService {
         return this.usuarioRepository.save(usuario);
     }
 
+    @Override
     public List<Usuario> obtenerUsuarios() {
         return this.usuarioRepository.findAll();
     }

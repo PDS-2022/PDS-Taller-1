@@ -6,6 +6,7 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -28,11 +29,9 @@ public class Usuario {
     @Column(name = "dependencia")
     private Dependencia dependencia;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "perfil")
-    @Type(type = "String[]")
     private String[] perfil;
 
     @OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Fila> filas;
+    private List<Fila> filas = new ArrayList<>();
 }
