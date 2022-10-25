@@ -4,8 +4,6 @@ import lombok.Data;
 
 @Data
 public class TareaInDTO {
-    private Integer id;
     private String nombre;
-
 }
 

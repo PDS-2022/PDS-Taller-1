@@ -1,11 +1,10 @@
 package com.poli.taller1.services.Fila.DTO;
 
-import com.poli.taller1.persistence.entity.Tarea;
+import com.poli.taller1.services.Tarea.DTO.TareaInDTO;
 import lombok.Data;
 
 @Data
 public class FilaInDTO {
-    private Long id_fila;
-    private Tarea tarea;
+    private TareaInDTO tarea;
     private Integer duracion;
 }

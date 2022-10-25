@@ -5,6 +5,7 @@ import com.poli.taller1.persistence.entity.Tarea;
 import com.poli.taller1.persistence.entity.Usuario;
 import com.poli.taller1.services.Fila.DTO.FilaInDTO;
 import com.poli.taller1.services.IMapper;
+import com.poli.taller1.services.Tarea.DTO.TareaInDTOToTarea;
 import org.springframework.stereotype.Component;
 
 import java.sql.Date;
@@ -22,7 +23,7 @@ public class UsuarioInDTOToUsuario implements IMapper<UsuarioInDTO, Usuario> {
         usuario.setActivo(in.getActivo());
         usuario.setPerfil(in.getPerfil());
         usuario.setDependencia(in.getDependencia());
-        usuario.setFecha_nacimiento((Date) in.getFecha_nacimiento());
+        usuario.setFecha_nacimiento(in.getFecha_nacimiento());
         return usuario;
 
     }
@@ -32,14 +33,14 @@ public class UsuarioInDTOToUsuario implements IMapper<UsuarioInDTO, Usuario> {
         for (FilaInDTO cd_fila : in) {
             filaLista.add(new Fila() {
 
-                @Override
-                public void setId_fila(Long id_fila) {
-                    super.setId_fila(cd_fila.getId_fila());
-                }
+                //@Override
+                //public void setId_fila(Long id_fila) {
+                //    super.setId_fila(cd_fila.getId_fila());
+                //}
 
                 @Override
                 public void setTarea(Tarea tarea) {
-                    super.setTarea(cd_fila.getTarea());
+                    super.setTarea(new TareaInDTOToTarea().map(cd_fila.getTarea()));
                 }
 
                 @Override

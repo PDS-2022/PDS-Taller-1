@@ -1,11 +1,10 @@
 package com.poli.taller1.services.Usuarios.DTO;
 
 import com.poli.taller1.persistence.entity.Dependencia;
-import com.poli.taller1.persistence.entity.Perfil;
 import com.poli.taller1.services.Fila.DTO.FilaInDTO;
 import lombok.Data;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Data

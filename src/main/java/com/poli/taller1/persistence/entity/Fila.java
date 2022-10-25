@@ -1,5 +1,7 @@
 package com.poli.taller1.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,10 +21,11 @@ public class Fila {
     @Column(name = "duracion")
     private Integer duracion;
 
-    @OneToOne(mappedBy = "fila", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "fila", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     private Tarea tarea;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 

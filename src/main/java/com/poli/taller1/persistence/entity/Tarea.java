@@ -18,7 +18,7 @@ public class Tarea {
     @Column(name = "nombre")
     private String nombre;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fila_id")
     private Fila fila;
 
