@@ -1,5 +1,6 @@
 package com.poli.taller1.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,7 +18,7 @@ public class Tarea {
     private Integer id;
     @Column(name = "nombre")
     private String nombre;
-
+    @JsonBackReference
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fila_id")
     private Fila fila;

@@ -6,6 +6,6 @@ import com.poli.taller1.services.Usuarios.DTO.UsuarioInDTO;
 import java.util.List;
 
 public interface IUsuarioService {
-    Usuario crearUsuario(UsuarioInDTO usuarioInDTO);
-    List<Usuario> obtenerUsuarios();
+    Usuario crear_usuario(UsuarioInDTO usuarioInDTO);
+    List<Usuario> obtener_usuario();
 }

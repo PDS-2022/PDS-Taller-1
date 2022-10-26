@@ -16,12 +16,12 @@ public class UsuarioController {
 
     @PostMapping
     public Usuario crear_usuario(@RequestBody UsuarioInDTO usuarioInDTO) {
-        return usuarioService.crearUsuario(usuarioInDTO);
+        return usuarioService.crear_usuario(usuarioInDTO);
     }
 
     @GetMapping
     public List<Usuario> obtenerUsuarios(){
-        return usuarioService.obtenerUsuarios();
+        return usuarioService.obtener_usuario();
     }
 
 }

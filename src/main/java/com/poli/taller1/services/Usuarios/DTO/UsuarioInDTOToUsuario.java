@@ -30,24 +30,11 @@ public class UsuarioInDTOToUsuario implements IMapper<UsuarioInDTO, Usuario> {
 
     private List<Fila> FilaInDTOToFila(List<FilaInDTO> in) {
         List<Fila> filaLista = new ArrayList<>();
+        Fila fila = new Fila();
         for (FilaInDTO cd_fila : in) {
-            filaLista.add(new Fila() {
-
-                //@Override
-                //public void setId_fila(Long id_fila) {
-                //    super.setId_fila(cd_fila.getId_fila());
-                //}
-
-                @Override
-                public void setTarea(Tarea tarea) {
-                    super.setTarea(new TareaInDTOToTarea().map(cd_fila.getTarea()));
-                }
-
-                @Override
-                public void setDuracion(Integer duracion) {
-                    super.setDuracion(cd_fila.getDuracion());
-                }
-            });
+            fila.setTarea(new TareaInDTOToTarea().map(cd_fila.getTarea()));
+            fila.setDuracion(cd_fila.getDuracion());
+            filaLista.add(fila);
         }
         return filaLista;
     }

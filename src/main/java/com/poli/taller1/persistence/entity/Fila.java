@@ -15,12 +15,13 @@ import java.util.Objects;
 public class Fila {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_fila")
-    private Long id_fila;
+    @Column(name = "id")
+    private Long id;
 
     @Column(name = "duracion")
     private Integer duracion;
 
+    @JsonManagedReference
     @OneToOne(mappedBy = "fila", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     private Tarea tarea;
 
@@ -34,11 +35,11 @@ public class Fila {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Fila fila = (Fila) o;
-        return id_fila.equals(fila.id_fila);
+        return id.equals(fila.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id_fila);
+        return Objects.hash(id);
     }
 }

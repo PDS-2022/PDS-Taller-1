@@ -18,14 +18,14 @@ public class UsuarioService implements IUsuarioService {
     private final UsuarioInDTOToUsuario usuarioInDTOToUsuario;
 
     @Override
-    public Usuario crearUsuario(UsuarioInDTO usuarioInDTO) {
+    public Usuario crear_usuario(UsuarioInDTO usuarioInDTO) {
         Usuario usuario = usuarioInDTOToUsuario.map(usuarioInDTO);
-        return this.usuarioRepository.save(usuario);
+        return usuarioRepository.save(usuario);
     }
 
     @Override
-    public List<Usuario> obtenerUsuarios() {
-        return this.usuarioRepository.findAll();
+    public List<Usuario> obtener_usuario() {
+        return usuarioRepository.findAll();
     }
 
     public String calcular_edad(Date fecha_cumpleaños) {
