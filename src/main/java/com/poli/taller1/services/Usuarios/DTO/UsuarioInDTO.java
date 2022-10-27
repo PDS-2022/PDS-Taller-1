@@ -9,6 +9,7 @@ import java.util.List;
 
 @Data
 public class UsuarioInDTO {
+    private Long id;
     private Date fecha_nacimiento;
     private Dependencia dependencia;
     private Boolean activo;
