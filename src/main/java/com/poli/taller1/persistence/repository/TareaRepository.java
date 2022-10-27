@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
  * los metodos del ORM Hibernate
  * */
 @Repository
-public interface TareaRepository extends JpaRepository<Tarea, Integer> {
+public interface TareaRepository extends JpaRepository<Tarea, Long> {
 }
