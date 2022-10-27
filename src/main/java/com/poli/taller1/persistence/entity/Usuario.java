@@ -32,7 +32,7 @@ public class Usuario {
     @Column(name = "perfil")
     private String[] perfil;
 
-    @JsonManagedReference //Cuando consulte el usuario me traiga las filas
+    @JsonManagedReference(value="usuario-fila") //Cuando consulte el usuario me traiga las filas
     @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     private List<Fila> filas;
 

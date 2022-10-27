@@ -23,10 +23,10 @@ public class Fila {
     private Integer duracion;
 
     @OneToOne(mappedBy = "fila")
-    @JsonManagedReference
+    @JsonManagedReference(value="fila-tarea")
     private Tarea tarea;
 
-    @JsonBackReference
+    @JsonBackReference(value="usuario-fila")
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
